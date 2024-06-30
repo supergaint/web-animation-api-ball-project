@@ -3,7 +3,7 @@ const play = document.getElementById('play')
 const pause = document.getElementById('pause')
 const reverse = document.getElementById('reverse')
 const speedUp = document.getElementById('speed-up')
-const speeDown = document.getElementById('speed-down')
+const slowDown = document.getElementById('slow-down')
 
 
 const rollAnimation = [{
@@ -27,5 +27,17 @@ const rollOptions = {
 
 const roll = ball.animate(rollAnimation, rollOptions)
 
-pause.addEventListener('click', ()=> roll.pause())
-play.addEventListener('click', ()=> roll.play())
+
+play.addEventListener('click', ()=> {
+    roll.playbackRate= 1;
+    roll.play();
+});
+pause.addEventListener('click', ()=> roll.pause());
+
+reverse.addEventListener('click', ()=> roll.reverse());
+
+speedUp.addEventListener('click', ()=>(
+    roll.playbackRate=roll.playbackRate*2));
+
+slowDown.addEventListener('click', ()=>(
+     roll.playbackRate=roll.playbackRate*0.5));
