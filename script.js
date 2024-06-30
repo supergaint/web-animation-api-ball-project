@@ -26,3 +26,6 @@ const rollOptions = {
 };
 
 const roll = ball.animate(rollAnimation, rollOptions)
+
+pause.addEventListener('click', ()=> roll.pause())
+play.addEventListener('click', ()=> roll.play())
